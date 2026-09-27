@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e4573d">
+  <meta name="description" content="NavJev is an efficient zero-shot vision-language navigation framework that compresses visual observations into action-centric text and makes typed navigation decisions in 0.65 seconds per step.">
+  <meta name="keywords" content="NavJev, vision-language navigation, VLN, embodied AI, zero-shot navigation, efficient VLM, action-centric visual compression">
+  <meta name="author" content="Kai Sheng, Liuyi Wang, Jinlong Li, Haojie Dai, Chengju Liu, Qijun Chen">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NavJev — Efficient Vision-Language Navigation">
+  <meta property="og:description" content="Efficient zero-shot VLN through action-centric visual compression, discriminative memory, and typed decisions.">
+  <meta property="og:image" content="static/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NavJev — Efficient Vision-Language Navigation">
+  <meta name="twitter:description" content="0.65 s per step and $0.06 per 100 episodes, with 27.0% SR on R2R-CE.">
+  <meta name="twitter:image" content="static/images/social-preview.png">
+  <meta name="citation_title" content="NavJev: Efficient Vision-Language Navigation via Action-Centric Visual Compression and Discriminative Action-Semantic Memory">
+  <meta name="citation_author" content="Sheng, Kai">
+  <meta name="citation_author" content="Wang, Liuyi">
+  <meta name="citation_author" content="Li, Jinlong">
+  <meta name="citation_author" content="Dai, Haojie">
+  <meta name="citation_author" content="Liu, Chengju">
+  <meta name="citation_author" content="Chen, Qijun">
+  <meta name="citation_publication_date" content="2026">
+  <title>NavJev — Efficient Vision-Language Navigation</title>
+  <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/index.css?v=20260927g">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "NavJev: Efficient Vision-Language Navigation via Action-Centric Visual Compression and Discriminative Action-Semantic Memory",
+    "author": [
+      {"@type":"Person","name":"Kai Sheng"}, {"@type":"Person","name":"Liuyi Wang"},
+      {"@type":"Person","name":"Jinlong Li"}, {"@type":"Person","name":"Haojie Dai"},
+      {"@type":"Person","name":"Chengju Liu"}, {"@type":"Person","name":"Qijun Chen"}
+    ],
+    "datePublished": "2026",
+    "isAccessibleForFree": true,
+    "affiliation": {"@type":"Organization","name":"Tongji University"},
+    "keywords": ["vision-language navigation", "embodied AI", "efficient inference", "zero-shot VLN"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="topbar" aria-label="Primary navigation">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="NavJev home"><span class="brand-mark">N<span>J</span></span>NavJev</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#results">Results</a><a href="#demos">Demos</a><a href="#citation">Citation</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero" id="top">
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div><div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Zero-shot vision-language navigation</p>
+          <h1><span class="navjev-title">NavJev:</span> Efficient Vision-Language Navigation</h1>
+          <p class="subtitle">via Action-Centric Visual Compression and Discriminative Action-Semantic Memory</p>
+          <div class="authors" aria-label="Authors">
+            <span>Kai Sheng</span><span>Liuyi Wang<sup>†</sup></span><span>Jinlong Li</span><span>Haojie Dai</span><span>Chengju Liu</span><span>Qijun Chen<sup>†</sup></span>
+          </div>
+          <p class="affiliation">College of Electronic and Information Engineering, Tongji University, Shanghai, China · <sup>†</sup>Corresponding authors</p>
+          <p class="author-email">{2610859, wly, li_jinlong, tju_dhj, liuchengju, qjchen}@tongji.edu.cn</p>
+          <div class="hero-actions">
+            <span class="button button-primary" title="The paper will be linked after its arXiv release"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6zM14 2v5h5M9 13h6M9 17h6M9 9h2"/></svg> Paper · coming soon</span>
+            <span class="button button-muted" title="The code repository will be linked when the project is released"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg> Code · coming soon</span>
+            <a class="button button-ghost" href="#results">View results ↓</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Headline performance">
+          <div class="hero-card-label">R2R-CE · 100 episodes</div>
+          <div class="hero-card-main"><strong>0.65</strong><span>s / step</span></div>
+          <div class="speed-line"><span></span></div>
+          <div class="hero-card-compare"><span>P2DNav</span><strong>4.92 s</strong></div>
+          <div class="hero-card-compare accent"><span>NavJev</span><strong>0.65 s</strong></div>
+        </aside>
+      </div>
+      <div class="shell metric-row" aria-label="NavJev key metrics">
+        <article><strong>27.0%</strong><span>Success rate</span></article><article><strong>22.4%</strong><span>SPL</span></article><article><strong>$0.06</strong><span>per 100 episodes</span></article><article><strong>4.46 GiB</strong><span>peak local GPU memory</span></article>
+      </div>
+    </header>
+
+    <section class="section section-intro" id="abstract">
+      <div class="shell abstract-block">
+        <p class="section-kicker">Abstract</p>
+        <h2>Efficient zero-shot VLN.</h2>
+        <p>Recent zero-shot Vision-and-Language Navigation (VLN) methods increasingly rely on multimodal large language models (MLLMs) to reason over visual observations, navigation instructions, and candidate actions. Although effective, repeatedly invoking autoregressive multimodal reasoning at every navigation step introduces substantial inference latency, limiting the responsiveness of embodied agents. We propose NavJev, an efficient VLN framework that reformulates online navigation from repeated multimodal generation into compact visual compression followed by lightweight typed action selection. Action-Centric Visual Compression (ACVC) integrates waypoint geometry, BLIP captions, and RAM semantic tags into compact representations of candidate actions, while Discriminative Action-Semantic Memory (DASM) filters shared semantics and maintains discriminative action-specific evidence across navigation steps. Based on these representations, Jev directly performs structured probabilistic decisions over the available action set. Experiments on R2R-CE show that NavJev achieves 27.0% SR and 22.4% SPL with only 0.65 s per navigation step, while substantially reducing inference latency and cost compared with MLLM-based VLN methods.</p>
+      </div>
+      <div class="shell teaser-frame"><img src="static/images/navjev/performance.png" alt="NavJev performance, average step time, and API cost compared with representative VLN methods" loading="eager"></div>
+    </section>
+
+    <section class="section section-tinted" id="method">
+      <div class="shell">
+        <div class="section-heading simple method-heading"><div><p class="section-kicker">Method</p></div></div>
+        <figure class="figure-card method-figure"><img src="static/images/navjev/method-overview-source.png" alt="NavJev pipeline from panoramic observation and waypoint prediction through ACVC, DASM, and Jev typed navigation decisions" loading="lazy"></figure>
+        <div class="method-grid">
+          <article class="method-card"><span class="method-index">01 · ACVC</span><h3>Action-Centric Visual Compression</h3><p>Each executable waypoint is represented by its motion, heading, distance, BLIP caption, and RAM tags, converting panoramic RGB-D observations into compact candidate action states.</p></article>
+          <article class="method-card"><span class="method-index">02 · DASM</span><h3>Discriminative Action-Semantic Memory</h3><p>Shared scene tags are removed while the selected action and its distinctive semantic evidence are retained across steps, preserving what separates one route choice from another.</p></article>
+          <article class="method-card"><span class="method-index">03 · JEV</span><h3>Typed Navigation Decisions</h3><p>Jev receives the instruction, compact action options, and navigation memory, then returns one constrained option label that maps directly to an executable waypoint or STOP.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="results">
+      <div class="shell">
+        <div class="section-heading simple light results-heading"><div><p class="section-kicker">Evaluation</p></div></div>
+        <div class="results-carousel">
+          <button class="carousel-button carousel-previous" type="button" aria-label="Show previous result"><span aria-hidden="true">←</span></button>
+          <div class="results-marquee" aria-label="NavJev experimental figures and tables">
+          <div class="results-track">
+            <div class="results-set">
+              <figure class="result-card result-card-wide"><figcaption><span>Figure 3</span>Inference efficiency</figcaption><img src="static/images/navjev/timing-comparison.png" alt="Average step time comparison and full NavJev wall-clock latency breakdown" loading="lazy"></figure>
+              <article class="result-card result-card-table result-card-wide"><header><span>Table 1</span>Navigation performance</header><div class="paper-table-wrap"><table class="paper-table paper-table-dense"><thead><tr><th>Method</th><th>Decision model</th><th>NE↓</th><th>OSR↑</th><th>SR↑</th><th>SPL↑</th></tr></thead><tbody><tr class="table-group"><td colspan="6">Supervised learning</td></tr><tr><td>Seq2Seq</td><td>–</td><td>7.77</td><td>37.0</td><td>25.0</td><td>22.0</td></tr><tr><td>MEE</td><td>–</td><td>6.82</td><td>44.6</td><td>35.9</td><td>32.3</td></tr><tr><td>NaVid</td><td>Vicuna-7B</td><td>5.47</td><td>49.1</td><td>37.4</td><td>35.9</td></tr><tr><td>MLANet</td><td>–</td><td>6.30</td><td>42.0</td><td>38.0</td><td>35.0</td></tr><tr><td>Uni-NaVid</td><td>Vicuna-7B</td><td>5.58</td><td>53.3</td><td>47.0</td><td>42.7</td></tr><tr><td>NaVILA</td><td>Llama-3-8B</td><td>5.22</td><td>62.5</td><td>54.0</td><td>49.0</td></tr><tr><td>StreamVLN</td><td>Qwen2-7B</td><td>4.98</td><td>64.2</td><td>56.9</td><td>51.9</td></tr><tr><td>ETPNav</td><td>–</td><td>4.71</td><td>65.0</td><td>57.0</td><td>49.0</td></tr><tr><td>BEVBert</td><td>–</td><td>4.57</td><td>67.0</td><td>59.0</td><td>50.0</td></tr><tr><td>JanusVLN</td><td>Qwen2.5-VL-7B</td><td>4.78</td><td>65.2</td><td>60.5</td><td><strong>56.8</strong></td></tr><tr><td>NavFoM</td><td>Qwen2-7B</td><td>4.61</td><td>72.1</td><td>61.7</td><td>55.3</td></tr><tr><td>CLASH</td><td>Qwen2.5-VL-72B</td><td><strong>4.06</strong></td><td><strong>73.0</strong></td><td><strong>65.0</strong></td><td>55.0</td></tr><tr class="table-group"><td colspan="6">Zero-shot</td></tr><tr><td>Random</td><td>–</td><td>8.63</td><td>12.0</td><td>2.0</td><td>1.5</td></tr><tr><td>MapGPT-CE</td><td>GPT-4o</td><td>8.16</td><td>21.0</td><td>7.0</td><td>5.0</td></tr><tr><td>DiscussNav-CE</td><td>GPT-4</td><td>7.77</td><td>15.0</td><td>11.0</td><td>10.5</td></tr><tr><td>Open-Nav</td><td>Llama3.1-70B</td><td>7.25</td><td>23.0</td><td>16.0</td><td>12.9</td></tr><tr><td>Open-Nav</td><td>GPT-4o</td><td>6.70</td><td>23.0</td><td>19.0</td><td>16.1</td></tr><tr><td>CA-Nav</td><td>GPT-4</td><td>7.58</td><td>48.0</td><td>25.3</td><td>10.8</td></tr><tr><td>SmartWay</td><td>GPT-4o</td><td>7.01</td><td>51.0</td><td>29.0</td><td>22.5</td></tr><tr><td>P2DNav</td><td>Qwen3-VL-32B</td><td><strong>6.61</strong></td><td><strong>65.0</strong></td><td><strong>50.0</strong></td><td><strong>30.6</strong></td></tr><tr class="table-highlight"><td><strong>NavJev</strong></td><td><strong>Jev</strong></td><td><strong>7.48</strong></td><td><strong>35.0</strong></td><td><strong>27.0</strong></td><td><strong>22.4</strong></td></tr></tbody></table></div></article>
+              <article class="result-card result-card-table"><header><span>Table 2</span>Inference efficiency</header><div class="paper-table-wrap centered-table"><table class="paper-table"><thead><tr><th>Method</th><th>Average step<br>time (s)↓</th><th>Average episode<br>time (s)↓</th><th>Average steps<br>per episode</th><th>Peak GPU<br>memory (GiB)↓</th></tr></thead><tbody><tr><td>NaVid</td><td>0.28</td><td>24.60</td><td>89.2</td><td>17.95</td></tr><tr><td>NaVILA</td><td>0.21</td><td>24.30</td><td>118.7</td><td>17.46</td></tr><tr><td>StreamVLN</td><td>0.23</td><td>16.69</td><td>73.6</td><td>23.63</td></tr><tr><td>JanusVLN</td><td>0.64</td><td>44.22</td><td>68.9</td><td>35.80</td></tr><tr class="table-highlight"><td><strong>NavJev</strong></td><td><strong>0.65</strong></td><td><strong>6.03</strong></td><td><strong>9.3</strong></td><td><strong>4.46</strong></td></tr></tbody></table></div></article>
+              <article class="result-card result-card-table"><header><span>Table 3</span>Decision model comparison</header><div class="paper-table-wrap centered-table"><table class="paper-table"><thead><tr><th>Decision model</th><th>SR↑</th><th>SPL↑</th><th>OSR↑</th><th>nDTW↑</th><th>Decision<br>latency (s)↓</th><th>Average step<br>time (s)↓</th><th>Total<br>cost↓</th></tr></thead><tbody><tr><td>GPT-4o</td><td>14.0</td><td>8.5</td><td>42.0</td><td>23.8</td><td>1.54 ± 0.42</td><td>1.66 ± 0.42</td><td>$3.67</td></tr><tr><td>Qwen3.8-Max</td><td>25.0</td><td>16.0</td><td><strong>46.0</strong></td><td>34.2</td><td>1.03 ± 0.25</td><td>1.15 ± 0.25</td><td>$2.19</td></tr><tr class="table-highlight"><td><strong>NavJev</strong></td><td><strong>27.0</strong></td><td><strong>22.4</strong></td><td>35.0</td><td><strong>43.5</strong></td><td><strong>0.53 ± 0.11</strong></td><td><strong>0.65 ± 0.11</strong></td><td><strong>$0.06</strong></td></tr></tbody></table></div></article>
+              <figure class="result-card"><figcaption><span>Figure 4</span>Latency distribution</figcaption><img src="static/images/navjev/results/figure-4-latency.png" alt="Per-episode average step time distribution for Jev, Qwen3.8-Max, and GPT-4o" loading="lazy"></figure>
+              <article class="result-card result-card-table"><header><span>Table 4</span>Component ablation</header><div class="paper-table-wrap centered-table"><table class="paper-table"><thead><tr><th>BLIP</th><th>RAM</th><th>DASM</th><th>TL↓</th><th>NE↓</th><th>OSR↑</th><th>SR↑</th><th>SPL↑</th><th>nDTW↑</th></tr></thead><tbody><tr><td>✓</td><td>✗</td><td>✗</td><td>12.10</td><td>8.80</td><td>33.0</td><td>19.0</td><td>14.4</td><td>36.2</td></tr><tr><td>✓</td><td>✓</td><td>✗</td><td>15.83</td><td>8.13</td><td>34.0</td><td>21.0</td><td>16.1</td><td>35.0</td></tr><tr class="table-highlight"><td>✓</td><td>✓</td><td>✓</td><td><strong>11.58</strong></td><td><strong>7.48</strong></td><td><strong>35.0</strong></td><td><strong>27.0</strong></td><td><strong>22.4</strong></td><td><strong>43.5</strong></td></tr></tbody></table></div></article>
+              <article class="result-card result-card-table"><header><span>Table 5</span>Real-world evaluation</header><div class="paper-table-wrap centered-table"><table class="paper-table"><thead><tr><th rowspan="2">Decision model</th><th colspan="2">Scene 1 (Office)</th><th colspan="2">Scene 2 (Café)</th><th colspan="2">Average</th><th rowspan="2">Decision<br>latency (s)↓</th><th rowspan="2">Average step<br>time (s)↓</th></tr><tr><th>OSR↑</th><th>SR↑</th><th>OSR↑</th><th>SR↑</th><th>OSR↑</th><th>SR↑</th></tr></thead><tbody><tr><td>Qwen3.8-Max</td><td>30.0</td><td>30.0</td><td>40.0</td><td>40.0</td><td>35.0</td><td>35.0</td><td>1.10 ± 0.30</td><td>1.23 ± 0.31</td></tr><tr class="table-highlight"><td><strong>NavJev</strong></td><td><strong>50.0</strong></td><td><strong>40.0</strong></td><td><strong>70.0</strong></td><td><strong>60.0</strong></td><td><strong>60.0</strong></td><td><strong>50.0</strong></td><td><strong>0.65 ± 0.51</strong></td><td><strong>0.79 ± 0.51</strong></td></tr></tbody></table></div></article>
+            </div>
+          </div>
+          </div>
+          <button class="carousel-button carousel-next" type="button" aria-label="Show next result"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demos">
+      <div class="shell">
+        <div class="section-heading simple"><div><p class="section-kicker">Demos</p><h2>Simulation</h2></div></div>
+        <div class="demo-grid">
+          <article class="video-card"><div class="video-title"><strong>Episode 259</strong><span>SR 1 · SPL 1.000</span></div><video autoplay muted loop playsinline controls preload="metadata"><source src="static/videos/episode-259-atomic.mp4?v=1080p2" type="video/mp4">Your browser does not support MP4 video.</video></article>
+          <article class="video-card"><div class="video-title"><strong>Episode 218</strong><span>SR 1 · SPL 1.000</span></div><video autoplay muted loop playsinline controls preload="metadata"><source src="static/videos/episode-218-atomic.mp4?v=1080p2" type="video/mp4">Your browser does not support MP4 video.</video></article>
+        </div>
+        <div class="real-world-block">
+          <div class="subsection-title"><div><h3>Real World</h3></div></div>
+          <figure class="figure-card real-world-paper"><img src="static/images/navjev/real-world-paper.png" alt="Real-world NavJev trajectories from the paper in cafe and office environments" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-citation" id="citation"><div class="shell citation-grid"><div><p class="section-kicker">Citation</p><h2>Cite NavJev</h2></div><div class="bibtex-card"><button id="copy-bibtex" type="button">Copy BibTeX</button><pre id="bibtex">@misc{sheng2026navjev,
+  title  = {NavJev: Efficient Vision-Language Navigation via
+            Action-Centric Visual Compression and Discriminative
+            Action-Semantic Memory},
+  author = {Sheng, Kai and Wang, Liuyi and Li, Jinlong and
+            Dai, Haojie and Liu, Chengju and Chen, Qijun},
+  year   = {2026},
+  note   = {Preprint}
+}</pre></div></div></section>
+  </main>
+
+  <footer><div class="shell footer-grid"><div><a class="brand footer-brand" href="#top"><span class="brand-mark">N<span>J</span></span>NavJev</a></div><div><strong>Resources</strong><span title="The paper will be linked after its arXiv release">Paper · coming soon</span><a href="#results">Results</a></div></div></footer>
+  <script src="static/js/index.js?v=20260927f"></script>
+</body>
+</html>
