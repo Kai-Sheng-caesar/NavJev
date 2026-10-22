@@ -64,7 +64,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .affiliation { max-width: 780px; margin: 8px 0 0; color: var(--ink-soft); font-size: 13px; }
 .author-email { margin: 5px 0 0; color: #6c7484; font: 500 12.5px/1.5 var(--mono); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 30px; }
-.release-note { margin: 16px 0 0; color: var(--coral-dark); font-size: 15px; font-weight: 600; }
+.release-note { margin: 16px 0 0; color: var(--coral-dark); font-size: 20px; font-weight: 600; }
 .button { min-height: 45px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 18px; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
 .button svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
 .button-primary { color: white; background: var(--coral); box-shadow: 0 10px 24px rgba(228, 87, 61, .24); }
