@@ -2,7 +2,7 @@
 
 Local project page for **NavJev: Efficient Vision-Language Navigation via Action-Centric Visual Compression and Discriminative Action-Semantic Memory**.
 
-The site is currently maintained in a private repository. It is a static page and can be hosted directly with GitHub Pages when the paper and code links are ready.
+The static project page is hosted with GitHub Pages at https://kai-sheng-caesar.github.io/NavJev/. The simulation code is maintained separately in the private `Kai-Sheng-caesar/NavJev-Sim` repository; the Code links require authorized GitHub access.
 
 ## Preview locally
 
@@ -16,7 +16,7 @@ Then open <http://127.0.0.1:4173>.
 
 ## Files to update before release
 
-- Replace the disabled **Code · coming soon** button in `index.html` with the public repository URL.
+- Keep the Code links aligned with the simulation repository and its access status.
 - Update the BibTeX block and scholarly metadata when an arXiv ID or venue is available.
 - Add the final public project URL to Open Graph metadata after the GitHub Pages repository is chosen.
 

@@ -69,6 +69,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .button-primary { color: white; background: var(--coral); box-shadow: 0 10px 24px rgba(228, 87, 61, .24); }
 .button-primary:hover { transform: translateY(-2px); background: var(--coral-dark); box-shadow: 0 14px 28px rgba(228, 87, 61, .28); }
 .button-muted { cursor: default; color: #747b8a; background: #ece8e2; }
+.button-code { color: var(--ink); background: #ece8e2; }
+.button-code:hover { background: #e0dad1; }
 .button-ghost { border: 1px solid var(--line); color: var(--ink); background: rgba(255,255,255,.76); }
 .button-ghost:hover { transform: translateY(-2px); background: white; box-shadow: var(--shadow-small); }
 
